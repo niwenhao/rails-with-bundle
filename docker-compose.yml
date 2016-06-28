@@ -1,0 +1,13 @@
+version: '2'
+services:
+    app:
+        build: app
+        hostname: app
+        container_name: app
+        working_dir: /usr/local/app
+        expose:
+            - 3000
+        volumes:
+            - ${PWD}/app:/usr/local/app
+            - /APL/share:/APL/share
+        command: bash -c 'while true; do sleep 10; done'
